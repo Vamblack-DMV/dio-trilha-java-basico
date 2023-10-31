@@ -2,32 +2,60 @@
  * Simulação de uso da classe MSNMessenger
  */
 
+import apps.FacebookMessenger;
+import apps.MSNMessenger;
+import apps.ServicoMensagemInstantanea;
+import apps.TelegramMessenger;
+
 public class ComputadorPedrinho {
 
+    // //método inicial
+    // public static void main(String[] args) {
+        
+    //     System.out.println("MSN");
+    //     //Abrindo o MSN Messenger
+    //     MSNMessenger msn = new MSNMessenger();
+
+    //     //antes
+    //     // msn.validarConectadoInternet();
+    //     // msn.enviarMensagem();
+    //     // msn.salvarHistoricoMensagem();
+
+    //     //Depois
+    //     msn.enviarMensagem();
+    //     msn.receberMensagem();
+
+    //     System.out.println("Facebook");
+    //     FacebookMessenger fcb = new FacebookMessenger();
+    //     fcb.enviarMensagem();
+    //     fcb.receberMensagem();
+
+    //     System.out.println("Telegram");
+    //     TelegramMessenger tlg = new TelegramMessenger();
+    //     tlg.enviarMensagem();
+    //     tlg.receberMensagem();
+    // }
+    
+    //método final
     public static void main(String[] args) {
         
-        System.out.println("MSN");
-        //Abrindo o MSN Messenger
-        MSNMessenger msn = new MSNMessenger();
+        ServicoMensagemInstantanea smi = null;
 
-        //antes
-        // msn.validarConectadoInternet();
-        // msn.enviarMensagem();
-        // msn.salvarHistoricoMensagem();
+        /*
+         * Não se sabe qual App
+         * mas qualquer um deverár enviar e receber mensagem
+         */
 
-        //Depois
-        msn.enviarMensagem();
-        msn.receberMensagem();
+         String appEscolhido = "msn";
 
-        System.out.println("Facebook");
-        FacebookMessenger fcb = new FacebookMessenger();
-        fcb.enviarMensagem();
-        fcb.receberMensagem();
+         if (appEscolhido.equals("msn"))
+            smi = new MSNMessenger();
+        else if (appEscolhido.equals("fbm"))
+            smi = new FacebookMessenger();
+        else if (appEscolhido.equals("tlg"))
+            smi = new TelegramMessenger();
 
-        System.out.println("Telegram");
-        TelegramMessenger tlg = new TelegramMessenger();
-        tlg.enviarMensagem();
-        tlg.receberMensagem();
+        smi.enviarMensagem();
+        smi.receberMensagem();
     }
-    
 }
